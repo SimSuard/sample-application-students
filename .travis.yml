@@ -16,4 +16,4 @@ jdk:
 script:
      - maven clean verify
      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-     - docker push "$DOCKER_USERNAME"/"$tp_devops"
+     - docker push "$DOCKER_USERNAME"/tp_devops
