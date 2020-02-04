@@ -7,13 +7,12 @@ cache:
 services:
      - docker
 
-before_install:
-     - docker build -t simon/java_api .
-     - docker run --name java_app java_api 
-
 jdk:
      - openjdk11
+
 script:
      - maven clean verify
+     - docker build -t simon/sample-application-db-changelog-job sample-application-db-changelog-job/.
+     - docker build -t simon/sample-application-http-api-server sample-application-http-api-server/.
      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
      - docker push "$DOCKER_USERNAME"/tp_devops
