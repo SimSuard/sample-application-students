@@ -3,7 +3,7 @@ FROM openjdk:11-jre
 ENV MYAPP_HOME /opt/myapp
 WORKDIR $MYAPP_HOME
 RUN ls -l 
-COPY /home/travis/build/SimSuard/sample-application-students/sample-application-http-api-server/target/sample-application-http-api-server-0.0.1-SNAPSHOT-exec.jar $MYAPP_HOME/myapp.jar
+COPY ./target/*-exec.jar $MYAPP_HOME/myapp.jar
 
 EXPOSE 8080
 
