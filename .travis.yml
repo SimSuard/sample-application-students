@@ -17,5 +17,9 @@ script:
      - pwd
      - docker build -t simon/sample-application-db-changelog-job sample-application-db-changelog-job/
      - docker build -t simon/sample-application-http-api-server sample-application-http-api-server/
-     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-     - docker push $DOCKER_USERNAME/tp_devops
+
+deploy:
+    provider: script
+    script: bash docker_push
+    on:
+        branch: dev
