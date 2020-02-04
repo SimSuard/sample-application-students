@@ -2,8 +2,8 @@
 FROM openjdk:11-jre
 ENV MYAPP_HOME /opt/myapp
 WORKDIR $MYAPP_HOME
-RUN ls -l
-COPY $MYAPP_HOME/target/*-exec.jar $MYAPP_HOME/myapp.jar
+RUN ls -l /target/
+COPY /target/*-exec.jar $MYAPP_HOME/myapp.jar
 
 EXPOSE 8080
 
