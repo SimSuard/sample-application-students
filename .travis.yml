@@ -13,7 +13,7 @@ jdk:
 script:
      - mvn clean verify
      - ls -l
-     - ls -l target/
+     - ls -l sample-application-db-changelog-job/target/
      - docker build -t simon/sample-application-db-changelog-job sample-application-db-changelog-job/.
      - docker build -t simon/sample-application-http-api-server sample-application-http-api-server/.
      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
