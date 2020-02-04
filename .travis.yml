@@ -8,7 +8,7 @@ addons:
   sonarcloud:
     organization: "simsuard"
     token:
-        secure: "$TOKEN"
+        secure: $TOKEN
         
 
 services:
