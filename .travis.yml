@@ -11,7 +11,7 @@ jdk:
      - openjdk11
 
 script:
-     - maven clean verify
+     - mvn clean verify
      - docker build -t simon/sample-application-db-changelog-job sample-application-db-changelog-job/.
      - docker build -t simon/sample-application-http-api-server sample-application-http-api-server/.
      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
