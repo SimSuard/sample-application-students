@@ -15,8 +15,8 @@ script:
      - ls -l
      - ls -l sample-application-db-changelog-job/
      - pwd
-     - docker build -t simon/sample-application-db-changelog-job sample-application-db-changelog-job/
-     - docker build -t simon/sample-application-http-api-server sample-application-http-api-server/
+     - docker build -t simonsuard/sample-application-db-changelog-job sample-application-db-changelog-job/
+     - docker build -t simonsuard/sample-application-http-api-server sample-application-http-api-server/
 
 deploy:
     provider: script

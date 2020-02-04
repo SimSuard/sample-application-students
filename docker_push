@@ -1,4 +1,4 @@
 #!/bin/bash
 docker login -u simonsuard -p "$DOCKER_PWD"
-docker push simon/sample-application-http-api-server
-docker push simon/sample-application-db-changelog-job
+docker push simonsuard/sample-application-http-api-server
+docker push simonsuard/sample-application-db-changelog-job
