@@ -1,0 +1,10 @@
+---
+# tasks file for roles/common
+- name: Open port 80
+  firewalld:
+    port: 80/tcp
+    state: enabled
+- name: Open port 22
+  firewalld:
+    port: 22/tcp
+    state: enabled

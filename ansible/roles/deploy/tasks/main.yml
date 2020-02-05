@@ -1,0 +1,21 @@
+---
+# tasks file for roles/deploy
+
+- name: Install pip
+  yum:
+    name: python-pip
+    state: latest
+
+- name: Docker module python
+  pip:
+    name: docker
+
+- name: Docker network net
+  docker_network:
+    name: net
+
+# - name: Log in Docker
+#   docker_login:
+#     username: simonsuard
+
+- 

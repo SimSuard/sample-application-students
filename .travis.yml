@@ -4,6 +4,11 @@ cache:
      - "$HOME/.m2/repository"
      - "$HOME/.sonar/cache"
 
+addons:
+     sonarcloud:
+          organization: "simsuard"
+          token:
+               secure: "$TOKEN"
 services:
      - docker
 
@@ -11,4 +16,9 @@ jdk:
      - openjdk11
 
 script:
-     - mvn clean verify
+     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=SimSuard_devops
+     - docker build -t simonsuard/sample-application-db-changelog-job sample-application-db-changelog-job/
+     - docker build -t simonsuard/sample-application-http-api-server sample-application-http-api-server/
+     - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PWD"
+     - docker push simonsuard/sample-application-db-changelog-job
+     - docker push simonsuard/sample-application-http-api-server

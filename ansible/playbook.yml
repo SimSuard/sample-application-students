@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: false
+  become: yes
+  roles: 
+    - common
+    - docker
+    - deploy
