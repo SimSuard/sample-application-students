@@ -22,3 +22,11 @@ script:
      - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PWD"
      - docker push simonsuard/sample-application-db-changelog-job
      - docker push simonsuard/sample-application-http-api-server
+
+
+deploy:
+    provider: script
+    script: ansible.sh
+    on:
+        branch: production
+

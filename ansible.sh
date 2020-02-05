@@ -1,0 +1,1 @@
+ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml
